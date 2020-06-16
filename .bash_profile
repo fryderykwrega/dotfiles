@@ -21,7 +21,7 @@ parse_git_branch () {
 }
 
 # resize and move terminal window to exact position on screen
-[[ -r ~/Documents/AppleScripts/resizeTerminal.scpt ]] && /usr/bin/osascript ~/Documents/AppleScripts/resizeTerminal.scpt
+[[ -r ~/.config/applescript/resizeTerminal.scpt ]] && /usr/bin/osascript ~/.config/applescript/resizeTerminal.scpt
 
 # terminal colors
 export TERM=xterm-256color
