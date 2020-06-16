@@ -37,21 +37,18 @@ CDPATH=.:$HOME:$HOME/WebDev
 # custom prompt
 export PS1='\n\[\e[0;33;49m\]⌜ \e[0;36;49m\]\u@\h\n\[\e[0;33;49m\]⠂\[\e[0;35;49m\] \w$(parse_git_branch) \[\e[0;33;49m\]\n⌞ \[\e[0;39;49m\]'
 
-# alias for ls (mac / wsl)
-if hash gls 2>/dev/null; then
-    alias ls='gls -AGhl --color --group-directories-first'
+# alias replacing ls with exa (if exists)
+if [[ -r /usr/local/bin/exa ]]; then
+    alias ls='exa -aal --color=always --group-directories-first'
 fi
 
 # aliases
-alias ll='ls -aGhl | grep "^d" && ls -aGhl | grep "^-" && ls -aGhl | grep "^l"'
 alias ..='cd ..'
 alias tm='tmux attach || tmux new'
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
-alias aptup='sudo apt update; sudo apt upgrade; sudo apt autoremove'
 alias fdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
 alias froute='sudo route -n flush'
 alias gitlog='git log --oneline'
-alias cdwin='cd /mnt/c/Users/Fryderyk'
 alias cdic='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
