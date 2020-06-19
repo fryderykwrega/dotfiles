@@ -21,7 +21,7 @@ parse_git_branch () {
 }
 
 # resize and move terminal window to exact position on screen
-[[ -r ~/.config/applescript/resizeTerminal.scpt ]] && /usr/bin/osascript ~/.config/applescript/resizeTerminal.scpt
+# [[ -r ~/.config/applescript/resizeTerminal.scpt ]] && /usr/bin/osascript ~/.config/applescript/resizeTerminal.scpt
 
 # terminal colors
 export TERM=xterm-256color
@@ -65,6 +65,9 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Alacritty bash completion
+source ~/.alacritty_bash_completion
 
 # Run pfetch if exists
 [[ -r "/usr/local/bin/pfetch" ]] && echo ""  && /usr/local/bin/pfetch
