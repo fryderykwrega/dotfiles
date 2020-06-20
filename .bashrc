@@ -7,10 +7,10 @@ parse_git_branch () {
                 then echo -en "" # nothing
             else
                 if [[ "$STATUS" != *'working tree clean'* ]]
-                    then echo -en '\033[0;31m ⋌ no commit' # red if need to commit
+                    then echo -en '\033[0;31m ⋌ not committed' # red if need to commit
             else
                 if [[ "$STATUS" == *'Your branch is ahead'* ]]
-                    then echo -en '\033[0;33m ⋌ no push' # yellow if need to push
+                    then echo -en '\033[0;33m ⋌ not pushed' # yellow if need to push
                 else
                     echo -en '\033[0;34m ⋌ clean' # else green
                 fi
@@ -63,7 +63,7 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Alacritty bash completion
-source ~/.alacritty_bash_completion
+[[ -r "~/.alacritty_bash_completion" ]] && source ~/.alacritty_bash_completion
 
 # Run pfetch if exists
 [[ -r "/usr/local/bin/pfetch" ]] && echo ""  && /usr/local/bin/pfetch
