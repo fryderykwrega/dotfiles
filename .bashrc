@@ -35,7 +35,7 @@ CDPATH=.:$HOME:$HOME/WebDev
 export PS1='\n\[\e[0;33;49m\]⌜ \e[0;36;49m\]\u@\h\n\[\e[0;33;49m\]⠂\[\e[0;35;49m\] \w$(parse_git_branch) \[\e[0;33;49m\]\n⌞ \[\e[0;39;49m\]'
 
 # alias replacing ls with exa (if exists)
-if [[ -r /usr/local/bin/exa ]]; then
+if test -e /usr/local/bin/exa || test -e /usr/bin/exa; then
     alias ls='exa -aal --color=always --group-directories-first'
 fi
 
