@@ -66,5 +66,5 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 [[ -r "~/.alacritty_bash_completion" ]] && source ~/.alacritty_bash_completion
 
 # Run pfetch if exists
-[[ -r "/usr/local/bin/pfetch" ]] && echo ""  && /usr/local/bin/pfetch
+[[ -r "/usr/local/bin/pfetch" ]] && [[ $- =~ "i" ]] && echo ""  && /usr/local/bin/pfetch
 
