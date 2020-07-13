@@ -112,10 +112,6 @@ export PATH="/usr/local/sbin:$PATH"
 # run vscode from terminal
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-# Added by n-install (see http://git.io/n-install-repo).
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
 # RUST
 export PATH="$HOME/.cargo/bin:$PATH"
 
@@ -139,3 +135,7 @@ echo ""
 echo ""
 [[ -r "/usr/local/bin/pfetch" ]] && [[ $- =~ "i" ]] && echo ""  && /usr/local/bin/pfetch
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
