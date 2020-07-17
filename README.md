@@ -1,14 +1,5 @@
 # Fred's configuration dotfiles for Mac OS X / Ubuntu
 
-### oh-my-zsh
-Install from https://github.com/ohmyzsh/ohmyzsh
-
-### zsh spaceship prompt
-Install from https://github.com/denysdovhan/spaceship-prompt#installing
-
-### spacevim
-Install from https://github.com/SpaceVim/SpaceVim
-
 ### pull dotfiles
 ```
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
