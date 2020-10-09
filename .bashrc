@@ -1,12 +1,3 @@
-# base configuration
-export USERNAME=''
-export CWD_LINE_ICON=⌜
-
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    USERNAME='⌜ \e[0;36;49m\]\u@\h\n\[\e[0;33;49m\]'
-    CWD_LINE_ICON=⠂
-fi
-
 parse_git_branch () {
     if git rev-parse --git-dir >/dev/null 2>&1
         then
@@ -30,7 +21,7 @@ parse_git_branch () {
 }
 
 # custom prompt
-export PS1='\n\[\e[0;33;49m\]$(echo $USERNAME)$(echo $CWD_LINE_ICON)\[\e[0;35;49m\] \w$(parse_git_branch) \[\e[0;33;49m\]\n⌞ \[\e[0;39;49m\]'
+export PS1='\n\[\e[0;33;49m\]⌜ \e[0;36;49m\]\u@\h\n\[\e[0;33;49m\]\[\e[0;35;49m\] \w$(parse_git_branch) \[\e[0;33;49m\]\n⌞ \[\e[0;39;49m\]'
 
 # bash completion
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
