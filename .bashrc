@@ -56,7 +56,8 @@ fi
 # pfetch
 echo ""
 echo ""
-[[ -r "/usr/local/bin/pfetch" ]] && [[ $- =~ "i" ]] && echo ""  && /usr/local/bin/pfetch
+[[ -x "/usr/local/bin/pfetch" ]] && [[ $- =~ "i" ]] && echo ""  && /usr/local/bin/pfetch
+[[ -x "/usr/bin/pfetch" ]] && [[ $- =~ "i" ]] && echo ""  && /usr/bin/pfetch
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
