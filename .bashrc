@@ -49,12 +49,9 @@ alias cdic='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # alias replacing ls with exa (if exists)
-if test -e /usr/local/bin/exa || test -e /usr/bin/exa || test -e ~/.cargo/bin/exa; then
-    alias ls='exa -aal --color=always --group-directories-first'
-fi
+[[ -x "/usr/local/bin/exa" ]] || [[ -x "/usr/bin/exa" ]] || [[ -x "~/.cargo/bin/exa" ]] && alias ls='exa -aal --color=always --group-directories-first'
 
 # pfetch
-echo ""
 echo ""
 [[ -x "/usr/local/bin/pfetch" ]] && [[ $- =~ "i" ]] && echo ""  && /usr/local/bin/pfetch
 [[ -x "/usr/bin/pfetch" ]] && [[ $- =~ "i" ]] && echo ""  && /usr/bin/pfetch
@@ -63,5 +60,3 @@ echo ""
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-source "$HOME/.cargo/env"
