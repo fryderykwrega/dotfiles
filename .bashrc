@@ -49,7 +49,7 @@ alias cdic='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # alias replacing ls with exa (if exists)
-[[ -x "/usr/local/bin/exa" ]] || [[ -x "/usr/bin/exa" ]] || [[ -x "~/.cargo/bin/exa" ]] && alias ls='exa -aal --color=always --group-directories-first'
+[[ -x "/usr/local/bin/exa" ]] || [[ -x "/usr/bin/exa" ]] || [[ -x "$HOME/.cargo/bin/exa" ]] && alias ls='exa -aal --color=always --group-directories-first'
 
 # pfetch
 echo ""
